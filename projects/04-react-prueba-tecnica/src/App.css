@@ -5,10 +5,23 @@ main {
   max-width: 800px;
   margin: 0 auto;
   font-family: system-ui;
+  gap: 20px;
 }
 
 main img {
   max-width: 320px;
   height: auto;
+}
+
+main button {
+  color: white;
+  background: black;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-family: system-ui;
+  font-weight: bold;
+  cursor: pointer;
+  
+
 }
 
