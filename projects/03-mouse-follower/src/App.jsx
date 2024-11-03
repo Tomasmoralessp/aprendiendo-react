@@ -7,6 +7,7 @@ const FollowMouse = () => {
   const [angle, setAngle] = useState(0)
   const radius = 50 
 
+  // Pointer move
   useEffect(() => {
     const handleMove = (event) => {
       const { clientX, clientY } = event
@@ -24,6 +25,7 @@ const FollowMouse = () => {
     }
   }, [enabled])
 
+  //Change angle
   useEffect(() => {
     let animationFrameId
     if (enabled) {
@@ -39,6 +41,18 @@ const FollowMouse = () => {
     }
     
   }, [enabled])
+
+  // Change body class
+  useEffect(() => {
+    document.body.classList.toggle('no-cursor', enabled)
+
+    return () => {
+      document.body.classList.remove('no-cursor', !enabled)
+
+    }
+
+  }, [enabled])
+  
 
   const orbitX = position.x + Math.cos(angle) * radius
   const orbitY = position.y + Math.sin(angle) * radius
